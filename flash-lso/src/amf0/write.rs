@@ -155,7 +155,8 @@ fn write_mixed_array<'a, 'b: 'a, W: Write + 'a>(
     Ok(())
 }
 
-pub(crate) fn write_value<'a, 'b: 'a, W: Write + 'a>(
+/// Write a AMF0 Value to the writer
+pub fn write_value<'a, 'b: 'a, W: Write + 'a>(
     writer: &mut W,
     element: &'b Rc<Value>,
 ) -> Result<()> {
